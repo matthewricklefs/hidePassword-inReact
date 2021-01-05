@@ -1,61 +1,53 @@
-// import React from 'react'
-// import { Component } from 'react'
-// import { render } from 'react-dom'
-
-// export default class InputPassword extends Component {
-//   constructor(props) {
-//     super(props)
-
-//     this.state = {
-//       type: 'input',
-//       score: 'null'
-//     }
-//     this.showHide = this.showHide.bind(this)
-//     // this.passwordStrength = this.passwordStrength.bind(this)
-//   }
-
-//   showHide = (e) => {
-//     e.preventDefault()
-//     e.stopPropagation()
-
-//     this.setState({
-//       type: this.state.type === 'input' ? 'password' : 'input'
-//     })
-//   }
-
-//   // passwordStrength = (e) => {
-//   //   if(e.target.value === '') {
-//   //     this.setState({
-//   //       score: 'null'
-//   //     })
-//   //   }
-//   //   else{
-//   //     var pw = (e.target.value)
-//   //     this.setState({
-//   //       score: pw.score
-//   //     })
-//   //   }
-//   // }
-
-// render() {
-//   return (
-//     <label className="password">Password
-//       <input
-//         type= {this.state.type}
-//         className= "password__input"
-//         // onChange= {this.passwordStrength}
-//       />
-
-//       <span
-//         className= "password__show"
-//         onClick= {this.showHide}
-//       >{this.state.type === 'input' ? 'Hide' : 'Show'}</span>
-
-//       {/* <span
-//         className="password__strength"
-//         data-score={this.state.score}
-//       /> */}
-//     </label>
-//   )
-//  }
-// }
+import React, { useState } from "react";
+import "./styles.css";
+export default function App() {
+  const [password, setPassword] = useState("");
+  const [inputType, setInputType] = useState("password");
+  return (
+    <div className="App">
+      <form>
+        <div style={styles.formWrapper}>
+          <input
+            style={styles.inputStyles}
+            type={inputType}
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div
+            style={{
+              ...styles.inputStyles,
+              ...styles.buttonStyles
+            }}
+            onClick={() =>
+              setInputType(inputType === "password" ? "text" : "password")
+            }
+          >
+            {inputType === "password" ? "Show" : "Hide"}
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+}
+const styles = {
+  formWrapper: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  inputStyles: {
+    outline: "none",
+    padding: "15px",
+    border: "none",
+    borderBottom: "1px solid black",
+    borderTop: "1px solid black",
+    borderLeft: "1px solid black",
+    fontSize: "15px"
+  },
+  buttonStyles: {
+    borderRight: "1px solid black",
+    borderLeft: "none",
+    cursor: "pointer"
+  }
+};
