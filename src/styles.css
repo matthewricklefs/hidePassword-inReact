@@ -1,0 +1,31 @@
+/* .App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body{
+  background: linear-gradient(#607D8B, #455A64);
+  font-family: 'Roboto', sans-serif;
+}
+
+form{
+  margin: 3em auto;
+  max-width: 320px;
+  background: #FFFFFF;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,.25);
+}
+
+.password {
+  border: 1px solid black;
+  border-radius: 10px 10px 10px 10px;
+  padding: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  background-color: #fff;
+} */
